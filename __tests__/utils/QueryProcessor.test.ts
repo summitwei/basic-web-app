@@ -65,4 +65,12 @@ describe("QueryProcessor", () => {
             "729 64"
         ));
     })
+
+    test('should find primes', () => {
+        const query = "primes 31 33 2 43 96";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe((
+            "31 2 43"
+        ));
+    })
 });

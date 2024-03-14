@@ -51,6 +51,27 @@ export default function QueryProcessor(query: string): string {
       }
     }
     return resp;
+  } else if (query.includes("primes")) {
+    var words = query.split(" ");
+    var resp = "";
+    for(var i = 0; i < words.length; i++){
+      if(!isNaN(parseInt(words[i]))){
+        var num = parseInt(words[i]);
+        var isPrime = true;
+        for(var j=2; j<num; j++){
+          if(num % j === 0){
+            isPrime = false;
+          }
+        }
+        if(isPrime){
+          if(resp !== ""){
+            resp += " ";
+          }
+          resp += num.toString();
+        }
+      }
+    }
+    return resp;
   }
 
   return "";
