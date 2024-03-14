@@ -8,7 +8,7 @@ export default function QueryProcessor(query: string): string {
   } else if (query.toLowerCase().includes("andrew")) {
     return "Your (my) Andrew ID is elwei.";
   } else if (query.toLowerCase().includes("name")) {
-    return "youre summit";
+    return "summit";
   } 
 
   return "";
