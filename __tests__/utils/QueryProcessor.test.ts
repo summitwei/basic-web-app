@@ -89,4 +89,12 @@ describe("QueryProcessor", () => {
             "625"
         ));
     })
+
+    test('should do power with bigints', () => {
+        const query = "68 power 31";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe((
+            "642356752613467390008718064548396883945857956905517842432"
+        ));
+    })
 });

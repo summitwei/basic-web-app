@@ -90,20 +90,23 @@ export default function QueryProcessor(query: string): string {
     return ans.toString();
   } else if (query.includes("power")) {
     var words = query.split(" ");
-    var ans = 0;
+    var ansBigInt = BigInt(1);
+    var factor = BigInt(1);
     var seenNum = false;
     for(var i = 0; i < words.length; i++){
       if(!isNaN(parseInt(words[i]))){
         var num = parseInt(words[i]);
         if(seenNum){
-          ans = Math.pow(ans, num);
+          for(var j=0; j<num; j++){
+            ansBigInt = ansBigInt * factor;
+          }
         } else{
-          ans = num;
+          factor = BigInt(num);
           seenNum = true;
         }
       }
     }
-    return ans.toString();
+    return ansBigInt.toString();
   }
 
   return "";
