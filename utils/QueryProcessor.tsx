@@ -18,6 +18,15 @@ export default function QueryProcessor(query: string): string {
       }
     }
     return maxV.toString();
+  } else if (query.includes("plus")) {
+    var words = query.split(" ");
+    var sum = 0;
+    for(var i = 0; i < words.length; i++){
+      if(!isNaN(parseInt(words[i]))){
+        sum += parseInt(words[i]);
+      }
+    }
+    return sum.toString();
   }
 
   return "";
