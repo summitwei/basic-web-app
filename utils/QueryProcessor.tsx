@@ -36,6 +36,21 @@ export default function QueryProcessor(query: string): string {
       }
     }
     return product.toString();
+  } else if (query.includes("square") && query.includes("cube")) {
+    var words = query.split(" ");
+    var resp = "";
+    for(var i = 0; i < words.length; i++){
+      if(!isNaN(parseInt(words[i]))){
+        var num = parseInt(words[i]);
+        if(Math.pow(Math.round(Math.pow(num, 1/6)), 6) === num){
+          if(resp !== ""){
+            resp += ", ";
+          }
+          resp += num.toString();
+        }
+      }
+    }
+    return resp;
   }
 
   return "";
