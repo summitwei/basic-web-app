@@ -27,6 +27,15 @@ export default function QueryProcessor(query: string): string {
       }
     }
     return sum.toString();
+  } else if (query.includes("multiplied")) {
+    var words = query.split(" ");
+    var product = 1;
+    for(var i = 0; i < words.length; i++){
+      if(!isNaN(parseInt(words[i]))){
+        product *= parseInt(words[i]);
+      }
+    }
+    return product.toString();
   }
 
   return "";

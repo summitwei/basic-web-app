@@ -49,4 +49,12 @@ describe("QueryProcessor", () => {
             "27"
         ));
     })
+
+    test('should take product', () => {
+        const query = "12 multiplied 15";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe((
+            "180"
+        ));
+    })
 });
