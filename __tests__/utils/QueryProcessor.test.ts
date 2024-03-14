@@ -73,4 +73,12 @@ describe("QueryProcessor", () => {
             "31 2 43"
         ));
     })
+
+    test('should do minus', () => {
+        const query = "4 minus 74";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe((
+            "-70"
+        ));
+    })
 });

@@ -72,6 +72,22 @@ export default function QueryProcessor(query: string): string {
       }
     }
     return resp;
+  } else if (query.includes("minus")) {
+    var words = query.split(" ");
+    var ans = 0;
+    var seenNum = false;
+    for(var i = 0; i < words.length; i++){
+      if(!isNaN(parseInt(words[i]))){
+        var num = parseInt(words[i]);
+        if(seenNum){
+          ans -= num;
+        } else{
+          ans += num;
+          seenNum = true;
+        }
+      }
+    }
+    return ans.toString();
   }
 
   return "";
