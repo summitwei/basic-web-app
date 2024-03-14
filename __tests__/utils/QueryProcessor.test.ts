@@ -62,7 +62,7 @@ describe("QueryProcessor", () => {
         const query = "square and cube 4411 3601 4169 729 64 3169 4489";
         const response: string = QueryProcessor(query);
         expect(response).toBe((
-            "729, 64"
+            "729 64"
         ));
     })
 });

@@ -44,7 +44,7 @@ export default function QueryProcessor(query: string): string {
         var num = parseInt(words[i]);
         if(Math.pow(Math.round(Math.pow(num, 1/6)), 6) === num){
           if(resp !== ""){
-            resp += ", ";
+            resp += " ";
           }
           resp += num.toString();
         }
