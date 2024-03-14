@@ -81,4 +81,12 @@ describe("QueryProcessor", () => {
             "-70"
         ));
     })
+
+    test('should do power', () => {
+        const query = "5 power 4";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe((
+            "625"
+        ));
+    })
 });
