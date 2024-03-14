@@ -9,7 +9,16 @@ export default function QueryProcessor(query: string): string {
     return "Your (my) Andrew ID is elwei.";
   } else if (query.toLowerCase().includes("name")) {
     return "summit";
-  } 
+  } else if (query.includes("largest")) {
+    var words = query.split(" ");
+    var maxV = 0;
+    for(var i = 0; i < words.length; i++){
+      if(!isNaN(parseInt(words[i]))){
+        maxV = Math.max(maxV, parseInt(words[i]));
+      }
+    }
+    return maxV.toString();
+  }
 
   return "";
 }

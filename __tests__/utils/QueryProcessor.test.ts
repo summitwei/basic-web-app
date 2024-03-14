@@ -25,4 +25,20 @@ describe("QueryProcessor", () => {
             "Your (my) Andrew ID is elwei."
         ));
     })
+
+    test('should return name', () => {
+        const query = "name";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe((
+            "summit"
+        ));
+    })
+
+    test('should take max', () => {
+        const query = "largest 42, 50, 51";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe((
+            "51"
+        ));
+    })
 });
